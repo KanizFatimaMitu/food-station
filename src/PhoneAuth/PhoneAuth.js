@@ -11,7 +11,7 @@ const PhoneAuth = (props) => {
             signInOptions: [
                 firebase.auth.PhoneAuthProvider.PROVIDER_ID
             ],
-            signInSuccessUrl: 'https://github.com/KanizFatimaMitu',
+            signInSuccessUrl: 'https://dream-home-1d288.web.app/',
             // privacyPolicyUrl : '/'
         })
     })
