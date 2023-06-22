@@ -3,7 +3,7 @@ import firebase from 'firebase/compat/app';
 import { initializeApp } from "firebase/app";
 import PhoneAuth from './PhoneAuth/PhoneAuth';
 import { useEffect, useState } from 'react';
-import {onAuthStateChanged} from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function App() {
   const firebaseConfig = {
@@ -18,8 +18,9 @@ function App() {
   firebase.initializeApp(firebaseConfig);
 
   const [user, setUser] = useState(null);
+  
   useEffect(() => {
-    const unRegistered = onAuthStateChanged(firebase.auth(), (currentUser)=>{
+    const unRegistered = onAuthStateChanged(firebase.auth(), (currentUser) => {
       console.log(currentUser);
       setUser(currentUser);
     })
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <PhoneAuth auth={firebase.auth()}></PhoneAuth>
+      
     </div>
   );
 }
